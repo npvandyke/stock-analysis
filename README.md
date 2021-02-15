@@ -11,6 +11,8 @@ The final refactored script, titled "AllStocksAnalysisRefactored()," can be run 
 
 ## Runtime Results 
 
+The images below display the side-by-side runtimes for the original script and refactored script on both the 2017 and 2018 datasets. 
+
 #### 2017 dataset: 
 
 Runtime for the original Module 2 Solution script:  |  Runtime for the refactored script: 
@@ -30,6 +32,10 @@ As clear from the results above, the refactored script had a much more effective
 
 #### 2017 dataset: 
 
+The images below display side-by-side analyses by the original Module 2 Solution script and refactored script on both the 2017 and 2018 data. The output of both scripts on each datset is identical, outside of rounding differences. There are clear differences, however, in the performance data for the analyzed stocks between the years 2017 and 2018. 
+
+The list of stocks in the dataset seemed to perform much better overall in 2017 than 2018, with eleven out of twelve stocks having positive returns for the year in 2017, versus only two out of twelve stocks in 2018. 
+
 Output for the original Module 2 Solution script:  |  Output for the refactored script: 
 :-------------------------:|:-------------------------:
 ![All_Stocks_Output_2017](Resources/All_Stocks_Output_2017.png)  |  ![Refactored_Output_2017](Resources/Refactored_Output_2017.png)
@@ -40,9 +46,13 @@ Output for the original Module 2 Solution script:  |  Output for the refactored 
 :-------------------------:|:-------------------------:
 ![All_Stocks_Output_2018](Resources/All_Stocks_Output_2018.png)  |  ![Refactored_Output_2018](Resources/Refactored_Output_2018.png)
 
-
+Based on the data available, Steve may want to advise his parents to invest in ENPH, a stock which had strong positive returns for both 2017 and 2018. 
 
 # Summary
 
-There is a detailed statement on the advantages and disadvantages of refactoring code in general (3 pt).
-There is a detailed statement on the advantages and disadvantages of the original and refactored VBA script
+There are always certain pros and cons to be weighted in refactoring code for a project. Refactoring can make a script more maintainable or scalable, and it can elimate "code smell," or general bad coding practices like the use of duplicate code or unnecessarily complex code. However, refactoring also takes time, and carries the risk of introducing new bugs to the code. 
+
+In this instance, refactoring the original code was beneficial in that it significantly decreased the runtime, making the script more scalable for use on a larger dataset. The script introduced three additional "output" arrays, eliminating the need to structure a nested loop to generate output, which reduced some of the script's complexity. While this change made the runtime faster and the script more readable, it should be noted that the additional arrays will take up more memory. 
+
+One issue with the original code that the refactored code did not address is the need to initialize an array of all tickers being analyzed at the start of the script. While this is not so much of an issue with the current use-case of analyzing twelve tickers, if Steve wishes to expand the script to include the entire stockmarket, expanding the initialized array of tickers could be a time-consuming adaptation with lots of potential for human error, if no form of automation is introduced to this part of the process. 
+
